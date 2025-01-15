@@ -1,0 +1,166 @@
+/* Общие стили */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Навигация */
+.nav-link {
+    font-weight: 500;
+    color: #495057;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* Главный блок (main) */
+main {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Футер */
+footer.bg-dark {
+    margin-top: 20px;
+    background-color: #343a40;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Кнопка навигации (мобильная версия) */
+.navbar-toggler {
+    border: none;
+    padding: 5px 10px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Hero Section */
+.hero-section {
+    margin: 0;
+    padding: 0;
+    background: url('https://zastavki.gas-kvas.com/uploads/posts/2024-09/zastavki-gas-kvas-com-36tw-p-zastavki-na-rabochii-stol-femida-boginya-p-17.jpg') center center/cover no-repeat;
+    height: 100vh; /* 100% высоты окна браузера */
+    width: 100%; /* Убедиться, что занимает всю ширину */
+    display: flex;
+    align-items: center; /* Центрирование контента по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    text-align: center; /* Текст центрируется */
+    color: white; /* Для читабельности */
+}
+
+.hero-section h1 {
+    font-size: 2.5rem; /* Увеличить для мобильных */
+    font-weight: bold;
+}
+
+.hero-section .btn-outline-light {
+    border-width: 2px;
+    padding: 0.7rem 2rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover эффект для кнопки */
+.hero-section .btn-outline-light:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Form Section */
+.form-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Форма */
+.form-section form {
+    background-color: #ffffff;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Кнопка отправки */
+.form-section .btn-success {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.form-section .btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Поля формы */
+.form-section .form-control {
+    box-shadow: none;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+}
+
+.form-section .form-control:focus {
+    border: 1px solid #28a745;
+    box-shadow: 0 0 5px rgba(72, 239, 128, 0.5);
+}
+
+/* Заголовок формы */
+.form-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Капча */
+.form-section .text-muted {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Мобильная оптимизация */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 1rem;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section .btn-outline-light {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+    .form-section h2 {
+        font-size: 1.5rem;
+    }
+    .form-section .form-control {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.9rem;
+    }
+}

@@ -1,25 +1,54 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="hero">
-    <h1>Бесплатные юридические консультации</h1>
-    <p>+7 (902) 000-6346</p>
-    <p>Изучим ваше дело, предложим варианты решений, окажем всестороннюю помощь.</p>
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center justify-content-center text-center" style="height: 100vh; background-color: #555;">
+    <div class="hero-content">
+        <h1 class="display-4 fw-bold text-white">Бесплатные юридические консультации</h1>
+        <p class="h5 text-white mt-4">+7 (8352) 275470</p>
+        <p class="lead text-light mt-3">
+            Изучим ситуацию клиента, расскажем о возможной перспективе дела, различных вариантах его решения и при согласии окажем всестороннюю юридическую помощь в г. Чебоксары.
+        </p>
+        <a href="#form-section" class="btn btn-outline-light btn-lg mt-4">Оставить заявку</a>
+    </div>
 </section>
 
-<section class="form-section">
-    <h2>Свяжитесь с нами</h2>
-    <form action="/send_email" method="POST">
-        <input type="email" name="email" placeholder="Ваш email" required>
-        <textarea name="message" placeholder="Ваше сообщение" required></textarea>
-        <button type="submit">Отправить</button>
-    </form>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %}
-          <div class="flash {{ category }}">{{ message }}</div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
+<!-- Hidden Form Section -->
+<section id="form-section" class="form-section py-5" style="display: none; background-color: #f8f9fa; min-height: 100vh;">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Заполните заявку для бесплатной консультации</h2>
+        <form action="/send_email" method="POST" class="p-4 shadow rounded" style="max-width: 600px; margin: 0 auto; background-color: #fff;">
+            <div class="mb-3">
+                <label for="name" class="form-label">Имя</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Введите ваше имя" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Телефон</label>
+                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Введите ваш телефон" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Электронная почта</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Введите ваш email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Сообщение</label>
+                <textarea name="message" id="message" rows="4" class="form-control" placeholder="Опишите вашу ситуацию" required></textarea>
+            </div>
+            <div class="mb-3 text-muted">
+                <label for="captcha" class="d-block mb-2">Капча</label>
+                <div>[Google reCAPTCHA]</div>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Отправить</button>
+        </form>
+    </div>
 </section>
+
+<script>
+    document.querySelector('.btn[href="#form-section"]').addEventListener('click', function (e) {
+        e.preventDefault();
+        const formSection = document.querySelector('#form-section');
+        formSection.style.display = 'block'; // Показать форму
+        formSection.scrollIntoView({ behavior: 'smooth' }); // Плавный скролл
+    });
+</script>
 {% endblock %}
