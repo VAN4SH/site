@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, redirect, flash
-from flask_mail import Mail, Message
+#from flask_mail import Mail, Message
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
-
+app.secret_key = os.getenv("SECRET_KEY")
 
 #app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 #app.config['MAIL_PORT'] = 587
@@ -11,7 +15,7 @@ app.secret_key = 'your_secret_key'
 #app.config['MAIL_USERNAME'] = 'your_email@gmail.com'
 #app.config['MAIL_PASSWORD'] = 'your_email_password'
 
-mail = Mail(app)
+#mail = Mail(app)
 
 @app.route('/')
 def home():
@@ -25,9 +29,9 @@ def specialization():
 def news():
     return render_template('news.html')
 
-@app.route('/contacts')
-def contacts():
-    return render_template('contacts.html')
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @app.route('/send_email', methods=['POST'])
 def send_email():

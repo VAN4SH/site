@@ -10,7 +10,7 @@ dev:
 PORT ?= 8000
 
 start:
-	poetry run gunicorn -w 2 -b 0.0.0.0:$(PORT) urist:app
+	poetry run gunicorn -w 2 -b 0.0.0.0:$(PORT) site:app
 
 build:
 	./build.sh
