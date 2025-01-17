@@ -1,26 +1,193 @@
-<!-- news.html -->
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal-Guard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+	 footer {
+    background-color: #222;
+    padding: 40px 0;
+    color: #ddd;
+    font-size: 14px;
+}
 
-{% block content %}
-<div class="container mt-5">
-    <h1 class="text-center mb-4">Новости</h1>
+footer h5 {
+    color: #fff;
+    margin-bottom: 15px;
+}
 
-    <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action">
-            <h5 class="mb-1">Новая практика в области недвижимости</h5>
-            <p class="mb-1">Мы добавили новые услуги в области недвижимости, включая сопровождение сделок с загородной недвижимостью.</p>
-            <small>Дата: 15 Января 2025</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-            <h5 class="mb-1">Семейные консультации</h5>
-            <p class="mb-1">Наша компания расширяет спектр услуг в области семейного права, предлагая подробные консультации по разводам и вопросам опеки.</p>
-            <small>Дата: 10 Января 2025</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-            <h5 class="mb-1">Обновления в корпоративном праве</h5>
-            <p class="mb-1">С 1 февраля вступают в силу новые нормы, касающиеся договорных обязательств и ответственности компаний.</p>
-            <small>Дата: 5 Января 2025</small>
-        </a>
+footer a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+.list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons i {
+    font-size: 22px;
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover i {
+    color: #fff;
+}
+
+.news-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #fafafa;
+}
+
+.news-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.news-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.news-content {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.read-more {
+    display: inline-block;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+    <!-- Верхнее меню -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">Legal-Guard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/specialization">Специализация</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<header class="page-header">
+        <div class="container">
+            <h1>Новости</h1>
+            <p>Последние новости и события нашей компании.</p>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="news">
+        <div class="container">
+            <!-- Первая новость -->
+            <article class="news-card">
+                <h2 class="news-title">тест</h2>
+                <p class="news-date"><i class="far fa-calendar-alt"></i> 10 октября 2023</p>
+                <p class="news-content">тест</p>
+                <a href="#" class="read-more">Читать дальше...</a>
+            </article>
+            
+            <!-- Вторая новость -->
+            <article class="news-card">
+                <h2 class="news-title">тест</h2>
+                <p class="news-date"><i class="far fa-calendar-alt"></i> 1 октября 2023</p>
+                <p class="news-content">тест</p>
+                <a href="#" class="read-more">Читать дальше...</a>
+            </article>
+            
+            <!-- Третья новость -->
+            <article class="news-card">
+                <h2 class="news-title">тест</h2>
+                <p class="news-date"><i class="far fa-calendar-alt"></i> 15 сентября 2023</p>
+                <p class="news-content">тест</p>
+                <a href="#" class="read-more">Читать дальше...</a>
+            </article>
+        </div>
+    </main>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h5>Точка Опоры</h5>
+                <p>© 2023 Все права защищены.</p>
+            </div>
+            <div class="col-lg-4">
+                <h5>Навигация</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/about">О нас</a></li>
+                    <li><a href="/specialization">Специализация</a></li>
+                    <li><a href="/news">Новости</a></li>
+                    <li><a href="/contact">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h5>Мы в соцсетях</h5>
+                <div class="social-icons">
+                    <a href="https://vk.com" target="_blank" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                    <a href="https://t.me" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-{% endblock %}
+</footer>
+</body>
+</html>

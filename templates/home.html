@@ -1,54 +1,213 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal-Guard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
 
-{% block content %}
-<!-- Hero Section -->
-<section class="hero-section d-flex align-items-center justify-content-center text-center" style="height: 100vh; background-color: #555;">
-    <div class="hero-content">
-        <h1 class="display-4 fw-bold text-white">Бесплатные юридические консультации</h1>
-        <p class="h5 text-white mt-4">+7 (8352) 275470</p>
-        <p class="lead text-light mt-3">
-            Изучим ситуацию клиента, расскажем о возможной перспективе дела, различных вариантах его решения и при согласии окажем всестороннюю юридическую помощь в г. Чебоксары.
-        </p>
-        <a href="#form-section" class="btn btn-outline-light btn-lg mt-4">Оставить заявку</a>
+        .hero-section {
+            position: relative;
+            background: url('https://img.icons8.com/ios/large/justice-scale.png') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-overlay {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+        }
+
+        footer {
+    background-color: #222;
+    padding: 40px 0;
+    color: #ddd;
+    font-size: 14px;
+}
+
+footer h5 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+.list-unstyled {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons i {
+    font-size: 22px;
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover i {
+    color: #fff;
+}
+    </style>
+</head>
+<body>
+    <!-- Верхнее меню -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">Legal-Guard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/specialization">Специализация</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Герой-секция -->
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold">Бесплатные юридические консультации</h1>
+            <p class="lead">Позвоните нам: +7 (8352) 275470</p>
+            <button class="btn btn-primary btn-lg" id="openFormBtn">Оставить заявку</button>
+        </div>
     </div>
-</section>
 
-<!-- Hidden Form Section -->
-<section id="form-section" class="form-section py-5" style="display: none; background-color: #f8f9fa; min-height: 100vh;">
+    <!-- Форма заявки -->
+    <div class="form-overlay" id="formOverlay">
+        <div class="card p-4" style="width: 400px;">
+            <h5 class="card-title mb-3 text-center">Оставить заявку</h5>
+            <form action="/send_email" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Имя</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+
+                    <label for="phone" class="form-label">Телефон</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Сообщение</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Отправить</button>
+                <button type="button" class="btn btn-secondary w-100 mt-2" id="closeFormBtn">Закрыть</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Футер -->
+<footer>
     <div class="container">
-        <h2 class="text-center mb-5 fw-bold">Заполните заявку для бесплатной консультации</h2>
-        <form action="/send_email" method="POST" class="p-4 shadow rounded" style="max-width: 600px; margin: 0 auto; background-color: #fff;">
-            <div class="mb-3">
-                <label for="name" class="form-label">Имя</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Введите ваше имя" required>
+        <div class="row">
+            <div class="col-lg-4">
+                <h5>Точка Опоры</h5>
+                <p>© 2023 Все права защищены.</p>
             </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Телефон</label>
-                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Введите ваш телефон" required>
+            <div class="col-lg-4">
+                <h5>Навигация</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/about">О нас</a></li>
+                    <li><a href="/specialization">Специализация</a></li>
+                    <li><a href="/news">Новости</a></li>
+                    <li><a href="/contact">Контакты</a></li>
+                </ul>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Электронная почта</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Введите ваш email" required>
+            <div class="col-lg-4">
+                <h5>Мы в соцсетях</h5>
+                <div class="social-icons">
+                    <a href="https://vk.com" target="_blank" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                    <a href="https://t.me" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Сообщение</label>
-                <textarea name="message" id="message" rows="4" class="form-control" placeholder="Опишите вашу ситуацию" required></textarea>
-            </div>
-            <div class="mb-3 text-muted">
-                <label for="captcha" class="d-block mb-2">Капча</label>
-                <div>[Google reCAPTCHA]</div>
-            </div>
-            <button type="submit" class="btn btn-success w-100">Отправить</button>
-        </form>
+        </div>
     </div>
-</section>
+</footer>
 
-<script>
-    document.querySelector('.btn[href="#form-section"]').addEventListener('click', function (e) {
-        e.preventDefault();
-        const formSection = document.querySelector('#form-section');
-        formSection.style.display = 'block'; // Показать форму
-        formSection.scrollIntoView({ behavior: 'smooth' }); // Плавный скролл
-    });
-</script>
-{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const openFormBtn = document.getElementById('openFormBtn');
+        const closeFormBtn = document.getElementById('closeFormBtn');
+        const formOverlay = document.getElementById('formOverlay');
+
+        openFormBtn.addEventListener('click', () => {
+            formOverlay.style.display = 'flex';
+        });
+
+        closeFormBtn.addEventListener('click', () => {
+            formOverlay.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
+

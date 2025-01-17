@@ -33,6 +33,10 @@ def news():
 def contact():
     return render_template('contact.html')
 
+#@app.route('/about')
+#def about():
+    #return render_template('about.html')
+
 @app.route('/send_email', methods=['POST'])
 def send_email():
     email = request.form['email']
