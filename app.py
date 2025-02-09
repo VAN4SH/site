@@ -25,17 +25,17 @@ def home():
 def specialization():
     return render_template('specialization.html')
 
-@app.route('/news')
+@app.route('/reviews')
 def news():
-    return render_template('news.html')
+    return render_template('reviews.html')
 
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
 
-@app.route('/about')
+@app.route('/consultation')
 def about():
-    return render_template('about.html')
+    return render_template('consultation.html')
 
 @app.route('/send_email', methods=['POST'])
 def send_email():
