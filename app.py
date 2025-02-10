@@ -37,6 +37,14 @@ def contact():
 def about():
     return render_template('consultation.html')
 
+@app.route('/avto')
+def avto():
+    return render_template('avto.html')
+
+@app.route('/administrativnie')
+def administrativnie():
+    return render_template('administrativnie.html')
+
 @app.route('/send_email', methods=['POST'])
 def send_email():
     email = request.form['email']
