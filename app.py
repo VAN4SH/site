@@ -45,6 +45,48 @@ def avto():
 def administrativnie():
     return render_template('administrativnie.html')
 
+@app.route('/arbitr')
+def arb():
+    return render_template('arbitr.html')
+
+@app.route('/citizens')
+def cit():
+    return render_template('citizens.html')
+
+@app.route('/consumers')
+def con():
+    return render_template('consumers.html')
+
+
+@app.route('/criminal')
+def crim():
+    return render_template('criminal.html')
+
+@app.route('/family')
+def fam():
+    return render_template('family.html')
+
+@app.route('/housing')
+def hous():
+    return render_template('housing.html')
+
+@app.route('/inheritance')
+def inher():
+    return render_template('inheritance.html')
+
+@app.route('/labor')
+def lab():
+    return render_template('labor.html')
+
+@app.route('/military')
+def milit():
+    return render_template('military.html')
+
+@app.route('/tax')
+def tax():
+    return render_template('tax.html')
+
+
 @app.route('/send_email', methods=['POST'])
 def send_email():
     email = request.form['email']
