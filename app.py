@@ -21,6 +21,10 @@ app.secret_key = os.getenv("SECRET_KEY")
 def home():
     return render_template('home.html')
 
+@app.route('/#form6-2k')
+def redirect_to_form():
+     return redirect(url_for('/', _anchor='form6-2k'))
+
 @app.route('/specialization')
 def specialization():
     return render_template('specialization.html')

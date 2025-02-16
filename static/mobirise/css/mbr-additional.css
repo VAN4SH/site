@@ -1669,7 +1669,7 @@ a {
   }
 }
 .cid-uAXRLQCESg {
-  background-color: #bbbbbb;
+  background-color: #ffffff;
 }
 .cid-uAXRLQCESg .mbr-fallback-image.disabled {
   display: none;
@@ -1686,10 +1686,32 @@ a {
 .cid-uAXRLQCESg .mbr-text,
 .cid-uAXRLQCESg .mbr-section-btn {
   text-align: center;
-  color: #fafafa;
+  color: #000000;
 }
 .cid-uAXRLQCESg .mbr-section-title {
   text-align: center;
+  color: #232323;
+}
+.cid-uCY88LR3pm {
+  padding-top: 0rem;
+  padding-bottom: 5rem;
+  background-color: #ffffff;
+}
+.cid-uCY88LR3pm .mbr-overlay {
+  background-color: #ffffff;
+  opacity: 0.4;
+}
+@media (min-width: 992px) {
+  .cid-uCY88LR3pm form {
+    width: 50%;
+  }
+}
+.cid-uCY88LR3pm form .mbr-section-btn {
+  text-align: center;
+  width: 100%;
+}
+.cid-uCY88LR3pm form .mbr-section-btn .btn {
+  width: 100%;
 }
 .cid-uCitx80Wlg {
   padding-top: 2rem;
@@ -2104,9 +2126,9 @@ a {
   }
 }
 .cid-uAdwRgXLsX {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: #2299aa;
+  padding-top: 7rem;
+  padding-bottom: 6rem;
+  background-color: #ffffff;
 }
 .cid-uAdwRgXLsX .mbr-fallback-image.disabled {
   display: none;
@@ -2560,7 +2582,7 @@ a {
 .cid-uAXWWtNp1p {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: #2299aa;
+  background-color: #ffffff;
 }
 .cid-uAXWWtNp1p .mbr-fallback-image.disabled {
   display: none;
@@ -3092,36 +3114,26 @@ a {
     left: -1rem;
   }
 }
-.cid-uAXYB8QxrA {
+.cid-uCXTsLJS2D {
   padding-top: 10rem;
-  padding-bottom: 8rem;
-  background-color: #2299aa;
+  padding-bottom: 10rem;
+  background-color: #ffffff;
 }
-.cid-uAXYB8QxrA .mbr-overlay {
+.cid-uCXTsLJS2D .mbr-overlay {
   background-color: #ffffff;
   opacity: 0.4;
 }
-.cid-uAXYB8QxrA form.mbr-form {
-  border-radius: 10px;
-  background-color: #fafafa;
-}
-@media (min-width: 992px) {
-  .cid-uAXYB8QxrA form.mbr-form {
-    padding: 3rem 2rem;
-    width: 70%;
-  }
-}
-@media (max-width: 991px) {
-  .cid-uAXYB8QxrA form.mbr-form {
-    padding: 1rem;
-  }
-}
-.cid-uAXYB8QxrA form.mbr-form .mbr-section-btn {
+.cid-uCXTsLJS2D form .mbr-section-btn {
   text-align: center;
   width: 100%;
 }
-.cid-uAXYB8QxrA form.mbr-form .mbr-section-btn .btn {
-  width: 100%;
+.cid-uCXTsLJS2D form .mbr-section-btn .btn {
+  display: inline-flex;
+}
+@media (max-width: 991px) {
+  .cid-uCXTsLJS2D form .mbr-section-btn .btn {
+    width: 100%;
+  }
 }
 .cid-uCitx80Wlg {
   padding-top: 2rem;
